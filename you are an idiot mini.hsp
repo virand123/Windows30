@@ -1,0 +1,20 @@
+title "you are an idiot"
+*he
+mmload "you.wav"
+mmplay 0
+picload "you3.jpg"
+wait 70
+picload "you4.jpg"
+wait 70
+picload "you3.jpg"
+wait 70
+picload "you4.jpg"
+wait 70
+picload "you3.jpg"
+wait 70
+picload "you4.jpg"
+wait 70
+picload "you3.jpg"
+wait 70
+picload "you4.jpg"
+goto *he

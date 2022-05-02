@@ -1,0 +1,87 @@
+*home
+bgscr 0,640,480,,0,0
+picload"win10bs.png"
+color 255,255,255
+mes"BSODシミュレーター"
+button goto"閉じる",*a
+button goto"Windows11InsiderPreview",*win11
+button goto"Windows10/8/8.1",*win10
+button goto"Windows10InsiderPreview",*win10test
+button goto"WindowsXP~7",*clas
+button goto"WindowsLonghorn(RED)",*red
+button goto"Windows9.xand3.x",*win
+button goto"Windows3.1~5.0(NT)",*NT
+button goto"Windows1.0~3.0",*MS
+
+stop
+*a
+	end
+	stop
+	
+*win11
+	mouse -1
+	picload "blank.png"
+	wait 1000
+	picload"11bs.png"
+	wait 2000
+	mouse
+	goto *home
+*win10
+	mouse -1
+		picload "blank.png"
+	wait 1000
+	picload"win10bs.png"
+	wait 2000
+	mouse
+	goto *home
+*win10test
+	mouse -1
+		picload "blank.png"
+	wait 1000
+	picload"ins.png"
+	wait 2000
+	mouse
+	goto *home
+
+	
+*clas
+	mouse -1
+		picload "blank.png"
+	wait 1000
+	picload"3bs.png"
+	wait 2000
+	mouse
+	goto *home
+*red
+	mouse -1
+		picload "blank.png"
+	wait 1000
+	picload"long.png"
+	wait 2000
+	mouse
+	goto *home
+*win
+	mouse -1
+		picload "blank.png"
+	wait 1000
+	picload"2bs.png"
+	wait 2000
+	mouse
+	goto *home
+*NT
+	mouse -1
+		picload "blank.png"
+	wait 1000
+	picload"nt.png"
+	wait 2000
+	mouse
+	goto *home
+*MS
+	mouse -1
+		picload "blank.png"
+	wait 1000
+	picload"1bs.png"
+	wait 2000
+	mouse
+	goto *home
+

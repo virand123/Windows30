@@ -1,0 +1,350 @@
+
+picload"windows10s.jpg"
+*startup
+	mouse -1
+mes"_"
+wait 100
+cls
+mes" "
+wait 100
+cls
+mes"_"
+wait 100
+cls
+mes" "
+wait 100
+cls
+
+font"Yu Gothic UI",30
+mes "Windows is starting up..."
+wait 100
+cls
+mes"_"
+wait 100
+cls
+mes" "
+wait 100
+cls
+mes"_"
+wait 100
+cls
+mes" "
+wait 100
+cls
+mmload "f.wav"
+mmplay 0
+*up
+cls
+mouse
+font"Yu Gothic UI",30
+mes"Administrator"
+button goto"サインイン",*log
+button goto"シャットダウン",*shut
+button goto"再起動",*restart
+stop
+
+
+
+
+*log
+cls
+
+
+mouse -1
+font"Yu Gothic UI",30
+mes"ようこそ"
+wait 100
+
+
+
+
+
+cls
+mouse
+color 255, 255, 255
+*desk
+cls
+picload"windows10s.jpg"
+button goto"PC",*PC
+button goto"BSOD",*bs
+button goto"2x2ゲーム",*aho
+button goto"bsodsimu",*sim
+button goto"typing",*start
+button goto"AboutWindows",*ab
+button goto"電卓",*calc
+button goto"IE",*IE
+pos 9,739
+button goto"スタート",*startmenu
+stop
+*IE
+	exec"IE.exe"
+    stop
+*calc
+	exec"calc.exe"
+	stop
+button goto"スタート",*startmenu
+stop
+*ab
+	cls
+	mes"Windowsについて"
+	mes"Windows HSP 30.0 Build 2J76"
+	button goto"閉じる",*desk
+	stop
+*PC
+exec"explorer.exe"
+stop
+
+
+*bs
+cls
+mmload "Windowsユーザーアカウント制御.wav"
+mmplay 0
+mes"この不明な発行元からこのデバイスに変更を加える事を許可しますか？"
+button goto"はい",*od
+button goto"いいえ",*desk
+stop
+*od
+cls
+mouse -1
+picload"win10bs.png"
+wait 3000
+cls
+mes"Starting Windows..."
+wait 100
+cls
+picload "win10bs.png"
+wait 3000
+cls
+mes"お待ちください"
+wait 1000
+mouse
+mes"PCを修復しますか？"
+button goto"はい",*fsfs
+button goto"いいえ",*nono
+stop
+
+
+*fsfs
+mes"修復しています..."
+wait 100
+cls
+mes"修復が完了しました。"
+cls
+mes"再起動します。"
+cls
+goto *startup
+stop
+
+*nono
+cls
+mouse -1
+mes"Restarting..."
+wait 100
+cls
+*notstartup
+font "AcPlus IBM VGA 9x16-2x"
+mes"Not startup Dvice "
+mes"Press Alt+F4 Key to shutdown your Computer"
+wait 10
+cls
+font "AcPlus IBM VGA 9x16-2x"
+mes"Not startup Dvice"
+mes"Press Alt+F4 Key to shutdown your Computer"
+wait 10
+cls
+goto *notstartup
+stop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*startmenu
+cls
+font "Yu Gothic UI",50
+mes"スタート"
+button goto"デスクトップ",*desk
+button goto"シャットダウン",*Shut
+button goto"サインアウト",*logof
+button goto"再起動",*restart
+stop
+
+
+
+
+
+*Shut
+cls
+mmload "x.wav"
+mmplay 0
+
+
+font"Yu Gothic UI",30
+mes"シャットダウンしています"
+wait 100
+
+cls
+font"Yu Gothic UI",30
+mes"・シャットダウンしています"
+wait 100
+
+cls
+font"Yu Gothic UI",30
+mes"・・シャットダウンしています"
+wait 100
+
+cls
+font"Yu Gothic UI",30
+mes"・・・シャットダウンしています"
+wait 100
+
+cls
+font"Yu Gothic UI",30
+mes"・・・・シャットダウンしています"
+wait 100
+
+
+cls
+end
+stop
+
+
+*logof
+cls
+wait 10
+mmload "logoff.wav"
+mmplay 0
+font"Yu Gothic UI",30
+mes"サインアウトしています。"
+wait 100
+goto *up
+stop
+
+*restart
+cls
+mmload "x.wav"
+mmplay 0
+font"Yu Gothic UI",30
+mes"再起動しています。"
+wait 100
+goto *startup
+stop
+
+
+*haha
+cls
+exec"You are an idiot.exe"
+end
+*aho
+exec"keisan.exe"
+stop
+
+*sim
+exec"bsod.exe"
+stop
+
+	;
+	;	タイピングゲーム サンプル
+	;
+	title "タイピングゲーム"
+	randomize
+*start
+	;	ゲーム開始
+	cls
+	button goto"終了",*syuu
+	score=0
+*greset
+	;	問題の準備
+	cursor=0
+	
+	typemode=0
+	m=rnd(21)
+	if m=0 : mondai="HAKUREIREIMU":mondai2="博麗霊夢"
+	if m=1 : mondai="SINGYOKU":mondai2="SinGyoku"
+	if m=2 : mondai="MIMA":mondai2="魅魔"
+	if m=3 : mondai="YUUGENMAGAN":mondai2="Yuugenmagan"
+	if m=4 : mondai="KIKURI":mondai2="Kikuri"
+	if m=5 : mondai="ELIS":mondai2="Elis"
+	if m=6 : mondai="KONNGARA":mondai2="Konngara"
+	if m=7 : mondai="SARIEL":mondai2="Sariel"
+	if m=8 : mondai="RIKA":mondai2="里香"
+	if m=9 : mondai="MEIRA":mondai2="明羅"
+	if m=10 : mondai="KIRISAMEMARISA":mondai2="霧雨魔理沙"
+	if m=11 : mondai="EREN":mondai2="エレン"
+	if m=12 : mondai="KOTOHIME":mondai2="小兎姫"
+	if m=13 : mondai="KANAANABERARU":mondai2="カナ・アナベラル"
+	if m=14 : mondai="ASAKURARIKAKO":mondai2="朝倉理香子"
+	if m=15 : mondai="KITASHIRAKAWACHIYURI":mondai2="北白河ちゆり"
+	if m=16 : mondai="OKAZAKIYUMEMI":mondai2="岡崎夢美"
+	if m=17 : mondai="ORENZI":mondai2="オレンジ"
+	if m=18 : mondai="KURUMI":mondai2="くるみ"
+	if m=19 : mondai="ERI-":mondai2="エリー"
+	if m=20 : mondai="YUUKA":mondai2="幽香"
+	if m=21 : mondai="MUGETU":mondai2="夢月"
+	if m=22 : mondai="GENGETU":mondai2="幻月"
+	if m=23 : mondai="SARA":mondai2="サラ"
+	if m=24 : mondai="RUIZU":mondai2="ルイズ"
+	if m=25 : mondai="ARISU":mondai2="アリス"
+	if m=26 : mondai="YUKI":mondai2="ユキ"
+	if m=27 : mondai="MAI":mondai2="マイ"
+	if m=28 : mondai="YUMEKO":mondai2="夢子"
+	if m=29 : mondai="SHINKI":mondai2="神綺"
+	onkey gosub *typein
+*main
+	;	ゲームメイン
+	redraw 0
+	color 192,192,192:boxf
+	font msgothic,16
+	color 0,0,0
+	
+	pos 80,40:mes "スコア:"+score
+	font msgothic,30,1
+	color 0,120,160
+	pos 170,198:mes mondai2
+	pos 170,238:mes mondai
+	pos 170,238:color 255,0,0:mes strmid(mondai,0,cursor)
+	redraw 1
+	await 50
+	if typemode>0 : onkey 0 : goto *greset
+	
+	
+	goto *main
+
+
+*typein
+	;	キーを押した時の処理
+	a=peek(mondai,cursor)
+	if a!=iparam : goto *typemiss
+	len=strlen(mondai)
+	cursor=cursor+1:if cursor<len : return
+	goto *win
+*typemiss
+	;	ミスタッチをした時
+	return
+*win
+	;	タイピング成功
+	typemode=1
+	score+=10
+	return
+
+
+*syuu
+	cls
+goto *desk
+
+
+
+
+
+
+

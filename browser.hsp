@@ -1,0 +1,43 @@
+//	IEコンポーネントのイベント (by Kpan)
+
+#define DIID_DWebBrowserEvents2 "{34A715A0-6587-11D0-924A-0020AFC7AC4D}"
+
+	sdim sText, 512
+
+	sdim url, 512
+	input url, ginfo(12), 22
+	button gosub "移動", *navigate
+
+	axobj IE, "Shell.Explorer.2", ginfo(12), 300
+
+;	ブラウザイベントの登録
+	comevent ie_event, IE, DIID_DWebBrowserEvents2, *event
+
+	stop
+
+*navigate
+	if url = "" : return
+
+	IE->"Navigate" url
+	return
+
+*event
+	DispID = comevdisp(ie_event)
+
+//	DISPID_STATUSTEXTCHANGE
+	if DispID = 102 {
+		comevarg sText, ie_event, 0
+		mes sText
+
+		return
+	}
+
+//	DISPID_TITLECHANGE
+	if DispID = 113 {
+		comevarg sText, ie_event, 0
+		title ""+sText
+
+		return
+	}
+
+	return

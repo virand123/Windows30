@@ -1,0 +1,50 @@
+screen 6,600,600
+title "“d‘ì"
+font "MS –¾’©",30,1
+pos 50,10
+mes "”š‚ğ“ü—Í‚µA‹L†‚ğ‘I‚ñ‚Å‚­‚¾‚³‚¢"
+pos 200,100
+input suuzi,50,20,5
+pos 200,130
+input suuzini,50,20,5
+pos 150,250
+objsize 30,30
+button "+",*{
+pos 190,250
+button "-",*[
+pos 230,250
+button "~",*~
+pos 270,250
+button "€",*€
+stop
+*‰‚ß
+color 255,255,255:boxf 0,100,600,600
+stop
+*{
+color 0,0,0
+pos 200,300
+mes suuzi+suuzini
+pos 200,400
+button "‚b",*‰‚ß
+stop
+*[
+color 0,0,0
+pos 200,300
+mes suuzi-suuzini
+pos 200,400
+button "‚b",*‰‚ß
+stop
+*~
+color 0,0,0
+pos 200,300
+mes suuzi*suuzini
+pos 200,400
+button "‚b",*‰‚ß
+stop
+*€
+color 0,0,0
+pos 200,300
+mes suuzi/suuzini
+pos 200,400
+button "‚b",*‰‚ß
+stop
